@@ -11,7 +11,7 @@ btns.forEach(
   function(btn) {
     btn.addEventListener('click', function (e) {
       const id = e.currentTarget.dataset.id;
-      if (id != 'C' && id != '=') {
+      if (id != 'C' && id != '=' && id != 'R') {
         tx = tx + id;
         text.textContent = tx;
       } else if(id == 'C') {
@@ -19,6 +19,9 @@ btns.forEach(
         text.textContent = tx;
       } else if(id == '=') {
         tx = eval(tx);
+        text.textContent = tx;
+      } else if (id == 'R') {
+        tx = Math.floor(eval(tx));
         text.textContent = tx;
       }
 
